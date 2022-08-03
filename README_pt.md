@@ -1,10 +1,4 @@
-<h2> Olá 👋 eu sou Cloud</h2>
-
----
-
-<!-- ![GitHub followers](https://img.shields.io/github/followers/nklowns?label=Seguidores&style=social)
-![](https://visitor-badge.glitch.me/badge?page_id=nklowns.nklowns) -->
-<!-- [![website](https://img.shields.io/badge/Website-46a2f1.svg?&style=flat-square&logo=Google-Chrome&logoColor=white&link=https://cloudlessv.me/)](https://cloudlessv.me/) -->
+<h1> Olá 👋 eu sou Cloud</h1>
 
 <table align="right">
   <tr><td>
@@ -29,43 +23,53 @@
   </td></tr>
 </table>
 
-### 🧐 Um pouco sobre mim...
+<h3> 🧐 Um pouco sobre mim... </h3>
 
 ```javascript
+import JavaScript, CSharp from 'business'
+import PHP from 'hobbies'
+
 let cloud = {
-  pronouns: "He" | "Him",
-  code: [Javascript, PHP],
+  pronouns: "He" || "Him",
+  code: [JavaScript, PHP, CSharp],
   basicInformationLevel: ["pt_BR", "en_US"],
-  currentFocus: "Design a branding image of self",
+  currentFocus: "Create a self-branding image.",
   askMeAbout: ["tech", "WebScraper or Spider?"]
 }
 ```
 
-## 🔧 Tecnologias & Ferramentas
+<h3> 🔧 Tecnologias & Ferramentas </h3>
 
-![](https://img.shields.io/badge/Shell-Pwsh-informational?style=flat&logo=powershell&logoColor=white&color=6aa6f8)
-![](https://img.shields.io/badge/OS-Windows-informational?style=flat&logo=windows&logoColor=white&color=6aa6f8)
-![](https://img.shields.io/badge/Editor-VS_Code-informational?style=flat&logo=visual-studio-code&logoColor=white&color=6aa6f8)
-![](https://img.shields.io/badge/Code-JavaScript-informational?style=flat&logo=javascript&logoColor=white&color=6aa6f8)
-![](https://img.shields.io/badge/Code-PHP-informational?style=flat&logo=php&logoColor=white&color=6aa6f8)
-![](https://img.shields.io/badge/Code-CSharp-informational?style=flat&logo=csharp&logoColor=white&color=6aa6f8)
-![](https://img.shields.io/badge/Code-Vue-informational?style=flat&logo=vue.js&logoColor=white&color=6aa6f8)
-![](https://img.shields.io/badge/Tools-PostgreSQL-informational?style=flat&logo=postgresql&logoColor=white&color=6aa6f8)
+![](https://img.shields.io/badge/Shell-PowerShell-informational?style=flat&logo=powershell&logoColor=white)
+![](https://img.shields.io/badge/OS-Windows-informational?style=flat&logo=windows&logoColor=white)
+![](https://img.shields.io/badge/Editor-VS_Code-informational?style=flat&logo=visual-studio-code&logoColor=white)
+![](https://img.shields.io/badge/Code-JavaScript-informational?style=flat&logo=javascript&logoColor=white)
+![](https://img.shields.io/badge/Code-PHP-informational?style=flat&logo=php&logoColor=white)
+![](https://img.shields.io/badge/Code-CSharp-informational?style=flat&logo=csharp&logoColor=white)
+![](https://img.shields.io/badge/Tools-PostgreSQL-informational?style=flat&logo=postgresql&logoColor=white)
+![](https://img.shields.io/badge/Tools-MSSQL_Server-informational?style=flat&logo=microsoft-sql-server&logoColor=white)
 
+<p align="right">alguns dos meus favoritos pessoais</p>
 
-### 📫 Gostaria de me conheçer?
+![](https://img.shields.io/badge/-Git-inactive?style=flat&logo=git&logoColor=white)
+![](https://img.shields.io/badge/-ASP.NET_Core-inactive?style=flat&logo=.net&logoColor=white)
+![](https://img.shields.io/badge/-Vue-inactive?style=flat&logo=vue.js&logoColor=white)
+![](https://img.shields.io/badge/-Cucumber-inactive?style=flat&logo=cucumber&logoColor=white)
+![](https://img.shields.io/badge/-Cypress-inactive?style=flat&logo=cypress&logoColor=white)
+![](https://img.shields.io/badge/-Jest-inactive?style=flat&logo=jest&logoColor=white)
+![](https://img.shields.io/badge/-Roots_Bedrock-inactive?style=flat&logo=roots-bedrock&logoColor=white)
+![](https://img.shields.io/badge/-Roots_Sage-inactive?style=flat&logo=roots-sage&logoColor=white)
+![](https://img.shields.io/badge/-Wordpress-inactive?style=flat&logo=wordpress&logoColor=white)
 
-[![](https://img.shields.io/badge/-resumo-332B40?style=flat-square)](https://resume.io/r/Yx57k9bcJ)
+---
+
+<h3> 📫 Gostaria de me conheçer? </h3>
+
+[![Resumo: English](https://img.shields.io/badge/-resumo-informational?style=flat-square)](https://resume.io/r/Yx57k9bcJ)
 [![Linkedin: cloudlessv](https://img.shields.io/badge/-cloudlessv-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/cloudlessv/)](https://www.linkedin.com/in/cloudlessv/)
 
-Escolha uma vaga se quiser encontrar-se comigo e conversar sobre qualquer coisa que lhe interesse - mas não se esqueça de descrever sobre na agenda
+Agende uma faixa horária clicando na imagem abaixo se quiser conversar comigo sobre qualquer coisa que lhe interesse - mas não se esqueça de descrever sobre na agenda.
 
 <a href="https://calendly.com/cloudlessv/30min" target="_blank">
   <img width="498" alt="meet_link" src="https://user-images.githubusercontent.com/15426564/144297439-f530f383-e73e-41e0-9914-a9b7d3f432e5.png">
 </a>
-
-<!--
-## 🗂️ Highlight Projects
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=nklowns&repo=nklowns)](https://github.com/nklowns/nklowns)
--->
