@@ -6,6 +6,7 @@
   path = C:/<WORKTREE>/.gitconfig_include
 
 [core]
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
 	editor = code --wait --reuse-window
 	autocrlf = false
 [sequence]
