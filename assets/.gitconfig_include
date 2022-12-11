@@ -1,0 +1,9 @@
+[user]
+	email = <EMAIL>
+	name = <NAME>
+
+[core]
+	eol = lf
+
+[push]
+	autoSetupRemote = true
