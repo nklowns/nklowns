@@ -36,24 +36,6 @@ Instalar o gerenciador que não é o chocolatey
 
 ### Lista de aplicativos para fresh start do scoop
 
-#### Buckets para scoop
-
-> nerd-fonts
-
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span>&gt; </span><span class="token" style="color: rgb(255, 215, 0);">scoop bucket</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">add</span><span> nerd-fonts</span></code>
-</pre>
-<br>
-
-#### Pacotes Global
-
-> FiraCode-NF
-
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span>&gt; </span><span class="token" style="color: rgb(255, 215, 0);">scoop install</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-g</span><span> FiraCode-NF</span></code>
-</pre>
-<br>
-
 #### Pacotes Local
 
 > git
@@ -74,6 +56,24 @@ Instalar o gerenciador que não é o chocolatey
 
 <pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
 <code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span>&gt; </span><span class="token" style="color: rgb(255, 215, 0);">scoop install</span><span> git</span><span> sudo</span><span> curl</span><span> composer</span><span> nvs</span><span> ngrok</span><span> openssh</span><span> ffmpeg</span><span> imagemagick</span><span> yt-dlp</span><span> adb</span><span> scrcpy</span></code>
+</pre>
+<br>
+
+#### Buckets para scoop
+
+> nerd-fonts
+
+<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
+<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span>&gt; </span><span class="token" style="color: rgb(255, 215, 0);">scoop bucket</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">add</span><span> nerd-fonts</span></code>
+</pre>
+<br>
+
+#### Pacotes Global
+
+> FiraCode-NF
+
+<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
+<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span>&gt; </span><span class="token" style="color: rgb(255, 215, 0);">scoop install</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-g</span><span> FiraCode-NF</span></code>
 </pre>
 <br>
 
