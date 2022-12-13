@@ -1,2 +1,2 @@
-openssl req -new -nodes -newkey rsa:2048 -keyout localhost.key -out localhost.csr -subj "/C=<PAIS>/ST=<ESTADO>/L=<CIDADE>/O=<ORG>-Certificates/CN=localhost"
-openssl x509 -req -sha256 -days 1024 -in localhost.csr -CA RootCA.pem -CAkey RootCA.key -CAcreateserial -extfile domains.ext -out localhost.crt
+openssl req -new -nodes -newkey rsa:2048 -keyout localhost.key -out localhost.csr -subj "/CN=localhost" -config local.csr.cnf
+openssl x509 -req -sha256 -days 398 -in localhost.csr -CA RootCA.pem -CAkey RootCA.key -CAcreateserial -extfile domains_v3.ext -out localhost.crt

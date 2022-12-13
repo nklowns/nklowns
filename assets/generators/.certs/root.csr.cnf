@@ -1,0 +1,8 @@
+[req]
+distinguished_name = dn
+
+[dn]
+C=<PAIS>
+O=<ORG>
+OU=<ORG> Root CA
+CN=<ORG>-Development-CA
