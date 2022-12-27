@@ -2,8 +2,10 @@
 	email = <EMAIL>
 	name = <NAME>
 
+# Override all above settings for the worktree
 [includeIf "gitdir:**/<WORKTREE>/"]
   path = C:/<WORKTREE>/.gitconfig_include
+# Maintain all below settings for the worktree
 
 [core]
 	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
