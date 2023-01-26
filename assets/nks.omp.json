@@ -7,7 +7,7 @@
         {
           "type": "os",
           "style": "diamond",
-          "foreground": "#ffffff",
+          "foreground": "#F8F8F2",
           "background": "#dd0041",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "leading_diamond": "\ue0b2",
@@ -19,7 +19,7 @@
         {
           "type": "session",
           "style": "diamond",
-          "foreground": "#ffffff",
+          "foreground": "#F8F8F2",
           "background": "#dd0041",
           "template": "{{ if .SSHSession }} \uF817 {{ .UserName }}@{{ .HostName }} {{ end }}",
           "leading_diamond": "\ue0b2",
@@ -28,7 +28,7 @@
         {
           "type": "shell",
           "style": "diamond",
-          "foreground": "#ffffff",
+          "foreground": "#F8F8F2",
           "background": "#dd0041",
           "template": " {{ .Name }} {{ .Version }} ",
           "leading_diamond": "\ue0b2",
@@ -42,7 +42,7 @@
         {
           "type": "sysinfo",
           "style": "diamond",
-          "foreground": "#ffffff",
+          "foreground": "#F8F8F2",
           "background": "#516BEB",
           "template": " \uf85a CPU: {{ round .PhysicalPercentUsed .Precision }}%",
           "leading_diamond": "\ue0b2"
@@ -50,7 +50,7 @@
         {
           "type": "sysinfo",
           "style": "diamond",
-          "foreground": "#ffffff",
+          "foreground": "#F8F8F2",
           "background": "#516BEB",
           "template": " \uf6dc MEM: {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
           "trailing_diamond": "\ue0b0"
@@ -152,7 +152,7 @@
         {
           "type": "battery",
           "style": "powerline",
-          "foreground": "#ffffff",
+          "foreground": "#F8F8F2",
           "background": "#f36943",
           "powerline_symbol": "\ue0b0",
           "template": "{{ if .Error }}{{ .Error }}{{ else }} {{ .Icon }}{{ .Percentage }}% {{ end }}",
@@ -170,7 +170,7 @@
         {
           "type": "connection",
           "style": "diamond",
-          "foreground": "#ffffff",
+          "foreground": "#F8F8F2",
           "background": "#08a1ec",
           "template": "\u2800{{ if eq .Type \"wifi\" }}\uf1eb{{ else if eq .Type \"ethernet\"}}\uf6ff{{ else if eq .Type \"bluetooth\" }}\uf5af{{ else if eq .Type \"cellular\" }}\uf012{{ end }} \u2800",
           "trailing_diamond": "\ue0b0",
@@ -197,7 +197,7 @@
         {
           "type": "aws",
           "style": "powerline",
-          "foreground": "#ffffff",
+          "foreground": "#F8F8F2",
           "background": "#FFA400",
           "template": " \uE7AD {{.Profile}}{{if .Region}}@{{.Region}}{{end}} ",
           "powerline_symbol": "\uE0B0"
