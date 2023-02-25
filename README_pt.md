@@ -30,11 +30,11 @@ import JavaScript, CSharp from 'business'
 import PHP from 'hobbies'
 
 let cloud = {
-  pronouns: "He" || "Him",
+  pronouns: "Ele" || "Dele",
   code: [JavaScript, PHP, CSharp],
   basicInformationLevel: ["pt_BR", "en_US"],
-  currentFocus: "Create a self-branding image.",
-  askMeAbout: ["tech", "WebScraper or Spider?"]
+  currentFocus: "Criar uma imagem de auto-branding.",
+  askMeAbout: ["tech", "WebScraper ou Spider?"]
 }
 ```
 
@@ -67,6 +67,7 @@ let cloud = {
 
 [![Resumo: English](https://img.shields.io/badge/-resumo-informational?style=flat-square)](https://resume.io/r/Yx57k9bcJ)
 [![Linkedin: cloudlessv](https://img.shields.io/badge/-cloudlessv-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/cloudlessv/)](https://www.linkedin.com/in/cloudlessv/)
+[![Website: Portfólio](https://img.shields.io/badge/Portfólio-blue.svg?&style=flat-square&logo=Google-Chrome&logoColor=white)](https://cloudlessv.netlify.app/)
 
 Agende uma faixa horária clicando na imagem abaixo se quiser conversar comigo sobre qualquer coisa que lhe interesse - mas não se esqueça de descrever sobre na agenda.
 

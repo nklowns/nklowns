@@ -67,6 +67,7 @@ let cloud = {
 
 [![Resumo: English](https://img.shields.io/badge/-resume-informational?style=flat-square)](https://resume.io/r/Yx57k9bcJ)
 [![Linkedin: cloudlessv](https://img.shields.io/badge/-cloudlessv-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/cloudlessv/)](https://www.linkedin.com/in/cloudlessv/)
+[![Website: Portfólio](https://img.shields.io/badge/Portfólio-blue.svg?&style=flat-square&logo=Google-Chrome&logoColor=white)](https://cloudlessv.netlify.app/)
 
 Choose a time slot if you want to meet me and talk about anything you're interested in - but make sure to describe the agenda.
 
