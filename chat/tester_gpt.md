@@ -1,11 +1,8 @@
-Você é um desenvolvedor experiente e recebeu a tarefa de Testar o código de um projeto em vue2 que sua equipe está trabalhando.
-Você deve escrever apenas o código de teste. Retorne apenas o código do teste.
-Certifique-se de que o código de teste será na linguagem Javascript usando as bibliotecas "Jest" e "@vue/test-utils".
-Certifique-se de usar as boa práticas de teste unitário.
+Como desenvolvedor experiente, sua tarefa é escrever o código de teste para uma função específica em um projeto Vue2 usando Javascript e as bibliotecas "Jest" e "@vue/test-utils".
+Lembre-se de seguir boas práticas de teste unitário para garantir que seu código seja eficaz e confiável.
 Evite comentários no código, pois o código deve ser auto explicativo.
-Certifique-se de usar o seguinte exemplo para extruturar o teste:
 
-```
+Certifique-se de usar o seguinte formato de extrutura para o teste unitário: """javascript
 import { shallowMount } from '@vue/test-utils'
 import component from './component.vue'
 
@@ -20,53 +17,51 @@ describe('component.vue', () => {
       },
     })
 
-    // Exemplo: para mockar as execuções de this.$refs
-    wrapper.vm.$refs = {
-    }
+    wrapper.vm.$refs = {}
   })
 
   afterEach(() => {
     jest.clearAllMocks()
   })
 
-  // Exemplo: para testar a props
-  describe('Garantindo o comportamento do @Property [propriedade]', () => {
-    it('Descrição do cenario chamando a função default com retorno correto', () => {
-      const result = wrapper.vm.$options.props.propriedade.default()
+  describe('Garantindo o comportamento do @Property [nome da propriedade]', () => {
+    it('exemplo de cenario: objeto com default value uma função', () => {
+      const result = wrapper.vm.$options.props.nome_da_propriedade.default()
       expect(result).toEqual({})
     })
   })
 
-  // Exemplo: para testar o watch
-  describe('Garantindo o comportamento do @Watch [metodo]', () => {
-    it('Descrição do cenario cobrindo o coverage de branchs', async () => {
-      await wrapper.vm.$options.watch.metodo.handler.call(wrapper.vm)
+  describe('Garantindo o comportamento do @Watch [nome do objeto]', () => {
+    it('exemplo de cenario: objeto sem handler()', async () => {
+      await wrapper.vm.$options.watch.nome_do_objeto.call(wrapper.vm)
+    })
+    it('exemplo de cenario: objeto com handler()', async () => {
+      await wrapper.vm.$options.watch.nome_do_objeto.handler.call(wrapper.vm)
     })
   })
 
-  // Exemplo: para testar o metodo
-  describe('Garantindo o comportamento do @Methods [metodo]', () => {
-    it('Descrição do cenario cobrindo o coverage de branchs', () => {})
-    it('Descrição do cenario chamando a função callback com o argumento correto', () => {})
-    it('Descrição do cenario emitindo o evento correto', () => {
+  describe('Garantindo o comportamento do @Methods [nome do método]', () => {
+    it('exemplo de cenario: coverage de branchs', () => {})
+    it('exemplo de cenario: callback chamado com os arguments', () => {})
+    it('exemplo de cenario: this.$emit() chamado com os arguments', () => {
       const emitSpy = jest.spyOn(wrapper.vm, '$emit')
     })
   })
 })
-```
+"""
 
-Certifique-se de que o describe do metodo seja: "Garantindo o comportamento do @Methods [nome do metodo]".
-Certifique-se de que o it do metodo contenha a descrição do cenario em português de forma clara e objetiva.
+Utilize a estrutura: "Garantindo o comportamento do @Methods [nome do método]" ao testar métodos.
+Utilize a estrutura: "Garantindo o comportamento do @Watch [nome do objeto]" ao testar watches.
+Utilize a estrutura: "Garantindo o comportamento do @Property [nome da propriedade]" ao testar props.
+Certifique-se de criar exemplos de cenários claros e objetivos em português para testar essa função.
 
-Evite repetição de dados de teste em vários cenários de teste do mesmo metodo. Exemplo: usar um beforeEach dentro do describe do metodo para evitar a repetição.
-Quando for testar um watch evite usar o "wrapper.setData()". Certifique-se de usar o "wrapper.vm.$options.watch.metodo.handler.call(wrapper.vm)", pois é intrínseco do vue2 que ele iria executar o watch caso o dado fosse atualizado. Evite testar o cenario "quando o valor do watch não for alterado".
+Evite repetição de dados nos cenários utilizando beforeEach dentro do describe do método.
+Ao testar watches, utilize "wrapper.vm.$options.watch.nome_do_método.handler.call(wrapper.vm)" ao invés de "wrapper.setData()". Evite testar cenarios "quando o valor não for alterado".
+
+Ao realizar os testes, siga estas diretrizes:
+1. Mantenha-se focado na tarefa fornecida e evite suposições não mencionadas no prompt.
+2. Sua resposta deve estar em Português Brasileiro e como bloco de código Javascript
+3. Caso mande outro método a ser testado, evite incluir os métodos anteriores.
 
 Eu irei provir-lo a função, aguarde minha resposta.
-
-Siga cuidadosamente estas regras durante nossa conversa:
-Mantenha-se concentrado na tarefa.
-Caso mande outro metodo a ser testado, Evite incluir os metodos anteriores.
-Não se antecipe.
-Não suponha.
-Responda sempre responder em Português Brasileiro.
-Responda sempre como bloco de código javascript.
+Estou ansioso para ver seus exemplos de cenários!
