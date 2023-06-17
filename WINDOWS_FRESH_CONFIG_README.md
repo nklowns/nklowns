@@ -42,10 +42,7 @@ Instalar o gerenciador que não é o chocolatey
 > sudo
 > curl
 
-> composer
-> nvs
 > ngrok
-> openssh
 > openssl
 
 > ffmpeg
@@ -56,7 +53,7 @@ Instalar o gerenciador que não é o chocolatey
 > scrcpy
 
 <pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">scoop install</span><span> git</span><span> sudo</span><span> curl</span><span> composer</span><span> nvs</span><span> ngrok</span><span> openssh</span><span> openssl</span><span> ffmpeg</span><span> imagemagick</span><span> yt-dlp</span><span> adb</span><span> scrcpy</span></code>
+<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">scoop install</span><span> git</span><span> sudo</span><span> curl</span><span> ngrok</span><span> openssl</span><span> ffmpeg</span><span> imagemagick</span><span> yt-dlp</span><span> adb</span><span> scrcpy</span></code>
 </pre>
 <br>
 
@@ -113,9 +110,14 @@ Editar a configuração do powershell para o seguinte conteudo
 <br>
 
 <pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code><span>oh-my-posh init pwsh --config="~/Documents/PowerShell/nks.omp.json" | Invoke-Expression</span>
+<code>
+<span>Set-PSReadLineKeyHandler -Chord "Ctrl+d" -Function ForwardWord</span>
+<span>Set-PSReadLineKeyHandler -Chord "Ctrl+s" -Function HistorySearchBackward</span>
 
-<span>Import-Module -Name Terminal-Icons</span></code>
+<span>oh-my-posh init pwsh --config="~/Documents/PowerShell/nks.omp.json" | Invoke-Expression</span>
+
+<span>Import-Module -Name Terminal-Icons</span>
+</code>
 </pre>
 <br>
 
@@ -162,3 +164,7 @@ Utilizando os binarios da [Adoptium.net](https://adoptium.net/installation/)
 <span class="token" style="color: rgb(255, 215, 0);">winget install</span><span> EclipseAdoptium.Temurin.17.JDK</span></code>
 </pre>
 <br>
+
+## Configurando o Node
+
+Utilizando o Volta [volta.sh](https://volta.sh/)
