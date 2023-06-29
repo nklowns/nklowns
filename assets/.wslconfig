@@ -5,4 +5,4 @@
 memory=7GB
 
 # Sets the VM to use two virtual processors
-processors=7
+processors=10
