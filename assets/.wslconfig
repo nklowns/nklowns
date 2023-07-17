@@ -1,5 +1,6 @@
 # Settings apply across all Linux distros running on WSL 2
 [wsl2]
+kernelCommandLine = "sysctl.vm.max_map_count=262144"
 
 # Limits VM memory to use no more than 4 GB, this can be set as whole numbers using GB or MB
 memory=7GB

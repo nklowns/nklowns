@@ -71,7 +71,7 @@ Instalar o gerenciador que não é o chocolatey
 > FiraCode-NF
 
 <pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">scoop install</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-g</span><span> FiraCode-NF</span></code>
+<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">sudo scoop install</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-g</span><span> FiraCode-NF</span></code>
 </pre>
 <br>
 
@@ -106,18 +106,13 @@ Baixar o [arquivo de layout para ohmyposh](assets/nks.omp.json)
 Extrair no diretorio ao lado do $PROFILE no caso do Windows
 `~/Documents/PowerShell/nks.omp.json`
 
-Editar a configuração do powershell para o seguinte conteudo
+Editar a [configuração do powershell](assets/Microsoft.PowerShell_profile.ps1) para o seguinte conteudo
 <br>
 
 <pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code>
-<span>Set-PSReadLineKeyHandler -Chord "Ctrl+d" -Function ForwardWord</span>
-<span>Set-PSReadLineKeyHandler -Chord "Ctrl+s" -Function HistorySearchBackward</span>
+<code><span>oh-my-posh init pwsh --config="~/Documents/PowerShell/nks.omp.json" | Invoke-Expression</span>
 
-<span>oh-my-posh init pwsh --config="~/Documents/PowerShell/nks.omp.json" | Invoke-Expression</span>
-
-<span>Import-Module -Name Terminal-Icons</span>
-</code>
+<span>Import-Module -Name Terminal-Icons</span></code>
 </pre>
 <br>
 
