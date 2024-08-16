@@ -136,6 +136,13 @@ Abrimos o arquivo para visualização e edição rapida seguindo
 </pre>
 <br>
 
+### configuração para ssh
+
+<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
+<code><span>Set-Service ssh-agent -StartupType Automatic</span></code>
+</pre>
+<br>
+
 ### configuração especifica para um Ambiente/Worktree de git
 
 Baixar o [arquivo de config para worktree](assets/.gitconfig_include)
@@ -160,6 +167,15 @@ Utilizando os binarios da [Adoptium.net](https://adoptium.net/installation/)
 </pre>
 <br>
 
+
+Executar o [arquivo de syslink para Temurin](assets/EclipseAdoptium.Temurin.JDK.ps1)
+
 ## Configurando o Node
 
-Utilizando o Volta [volta.sh](https://volta.sh/)
+Utilizando o Fnm [fnm.vercel.app](https://github.com/Schniz/fnm)
+
+
+<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
+<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">winget install</span><span> Schniz.fnm</span></code>
+</pre>
+

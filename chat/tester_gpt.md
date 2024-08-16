@@ -7,6 +7,10 @@ import { shallowMount } from '@vue/test-utils';
 import component from './component.vue';
 
 describe('component.vue', () => {
+  /**
+   * @type {import('@vue/test-utils').Wrapper<Vue>}
+   * @let {Wrapper<Vue>} wrapper
+   */
   let wrapper;
 
   beforeEach(() => {
@@ -45,11 +49,12 @@ describe('component.vue', () => {
     it('Exemplo de cenário: cobertura de ramos', () => {});
     it('Exemplo de cenário: chamada de retorno com argumentos', () => {});
     it('Exemplo de cenário: deve chamar this.$emit() com os argumentos corretos', () => {
-      const emitSpy = jest.spyOn(wrapper.vm, '$emit');
+      jest.spyOn(wrapper.vm, '$emit');
+      
       const value = 'valor';
-
       wrapper.vm.nome_do_metodo(value);
-      expect(emitSpy).toHaveBeenCalledWith('evento', value);
+
+      expect(wrapper.vm.$emit).toHaveBeenCalledWith('event', value);
     });
   });
 });
