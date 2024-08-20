@@ -19,17 +19,20 @@ describe('component.vue', () => {
       mocks: {
         $t: msg => msg,
         $can: () => true,
+        // this.$[nome] ignore ($refs, $emit, $root)
       },
     });
 
-    wrapper.vm.$refs = {};
+    wrapper.vm.$refs = {
+      // this.$refs.[elemento com atributo ref].[Componente Vue] simulado com jest.fn()
+    };
   });
 
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  describe('Garantindo o comportamento do @Property [nome da propriedade]', () => {
+  describe('Garantindo o comportamento do @Property [nome da propriedade]', () => { // Para cobertura, teste apenas os Props com “default: () =>”, ignore o resto.
     it('Exemplo de cenário: objeto com valor padrão como uma função', () => {
       const result = wrapper.vm.$options.props.nome_da_propriedade.default();
       expect(result).toEqual({});
@@ -37,10 +40,10 @@ describe('component.vue', () => {
   });
 
   describe('Garantindo o comportamento do @Watch [nome do objeto]', () => {
-    it('Exemplo de cenário: objeto sem handler()', async () => {
+    it('Exemplo de cenário: objeto sem handler()', async () => { // se Watch for uma função.
       await wrapper.vm.$options.watch.nome_do_objeto.call(wrapper.vm);
     })
-    it('Exemplo de cenário: objeto com handler()', async () => {
+    it('Exemplo de cenário: objeto com handler()', async () => { // se Watch for um objeto.
       await wrapper.vm.$options.watch.nome_do_objeto.handler.call(wrapper.vm);
     });
   });
@@ -50,11 +53,11 @@ describe('component.vue', () => {
     it('Exemplo de cenário: chamada de retorno com argumentos', () => {});
     it('Exemplo de cenário: deve chamar this.$emit() com os argumentos corretos', () => {
       jest.spyOn(wrapper.vm, '$emit');
-      
+
       const value = 'valor';
       wrapper.vm.nome_do_metodo(value);
 
-      expect(wrapper.vm.$emit).toHaveBeenCalledWith('event', value);
+      expect(wrapper.vm.$emit).toHaveBeenCalledWith('evento', value);
     });
   });
 });
