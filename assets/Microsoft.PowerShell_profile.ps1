@@ -9,7 +9,7 @@
 (& "C:\\Users\\cloud\\miniconda3\\Scripts\\conda.exe" "shell.powershell" "hook") | Out-String | Invoke-Expression
 #endregion
 
-(& "C:\\Users\\cloud\\AppData\\Local\\Programs\\oh-my-posh\\bin\\oh-my-posh.exe" init pwsh --config="~\Documents\PowerShell\nks.omp.json") | Invoke-Expression
+(@(& "C:\\Users\\cloud\\AppData\\Local\\Programs\\oh-my-posh\\bin\\oh-my-posh.exe" init pwsh --config="~\Documents\PowerShell\nks.omp.json" --print) -join "`n") | Invoke-Expression
 
 fnm env --use-on-cd --shell power-shell | Out-String | Invoke-Expression
 

@@ -1,83 +1,103 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "console_title_template": "{{if .Root}}⚡ {{end}}{{.HostName}} ➔ {{ .Folder }}",
+  "pwd": "osc99",
+  "version": 3,
+  "final_space": true,
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "type": "os",
           "style": "diamond",
-          "foreground": "#F8F8F2",
-          "background": "#dd0041",
-          "template": " {{ if .WSL }}\uE62A {{ end }}{{.Icon}} ",
-          "leading_diamond": "\ue0b2",
-          "trailing_diamond": "<transparent,#dd0041>\ue0b2</>"
-        },
-        {
-          "type": "session",
-          "style": "diamond",
-          "foreground": "#F8F8F2",
-          "background": "#dd0041",
-          "template": "{{ if .SSHSession }} \uF817 {{ .UserName }}@{{ .HostName }} {{ end }}",
-          "leading_diamond": "\ue0b2",
-          "trailing_diamond": "<transparent,#dd0041>\ue0b2</>"
-        },
-        {
-          "type": "shell",
-          "style": "diamond",
-          "foreground": "#F8F8F2",
-          "background": "#dd0041",
-          "template": " {{ .Name }} {{ .Version }} ",
           "leading_diamond": "\ue0b2",
           "trailing_diamond": "<transparent,#dd0041>\ue0b2</>",
+          "template": " {{ if .WSL }}\ue62a {{ end }}{{.Icon}} ",
+          "foreground": "#F8F8F2",
+          "background": "#dd0041",
+          "type": "os"
+        },
+        {
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "trailing_diamond": "<transparent,#dd0041>\ue0b2</>",
+          "template": "{{ if .SSHSession }} \uf817 {{ .UserName }}@{{ .HostName }} {{ end }}",
+          "foreground": "#F8F8F2",
+          "background": "#dd0041",
+          "type": "session"
+        },
+        {
           "properties": {
             "mapped_shell_names": {
-              "pwsh": "\uebc7 pwsh",
-              "bash": "\uebca bash"
+              "bash": "\uebca bash",
+              "pwsh": "\uebc7 pwsh"
             }
-          }
+          },
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "trailing_diamond": "<transparent,#dd0041>\ue0b2</>",
+          "template": " {{ .Name }} {{ .Version }} ",
+          "foreground": "#F8F8F2",
+          "background": "#dd0041",
+          "type": "shell"
         },
         {
-          "type": "sysinfo",
           "style": "diamond",
-          "foreground": "#F8F8F2",
-          "background": "#516BEB",
+          "leading_diamond": "\ue0b2",
           "template": "\u2800\uf4bc CPU: {{ round .PhysicalPercentUsed .Precision }}%",
-          "leading_diamond": "\ue0b2"
-        },
-        {
-          "type": "sysinfo",
-          "style": "diamond",
           "foreground": "#F8F8F2",
           "background": "#516BEB",
-          "template": "\u2800\udb80\udf5b MEM: {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
-          "trailing_diamond": "\ue0b0"
+          "type": "sysinfo"
         },
         {
-          "type": "executiontime",
           "style": "diamond",
-          "foreground": "#d6deeb",
-          "background": "#575656",
-          "template": "\udb80\udd52 {{ .FormattedMs }}\u2800",
+          "trailing_diamond": "\ue0b0",
+          "template": "\u2800\udb80\udf5b MEM: {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
+          "foreground": "#F8F8F2",
+          "background": "#516BEB",
+          "type": "sysinfo"
+        },
+        {
+          "properties": {
+            "style": "austin",
+            "threshold": 500
+          },
+          "style": "diamond",
           "leading_diamond": "<transparent,#575656>\ue0b0</>",
           "trailing_diamond": "\ue0b0",
-          "properties": {
-            "threshold": 500,
-            "style": "austin"
-          }
+          "template": "\udb80\udd52 {{ .FormattedMs }}\u2800",
+          "foreground": "#d6deeb",
+          "background": "#575656",
+          "type": "executiontime"
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
+      "type": "prompt",
       "alignment": "right",
       "segments": [
         {
-          "type": "git",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_worktree_count": true
+          },
           "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "trailing_diamond": "\ue0b0",
           "foreground": "#193549",
-          "background": "#fffb38",
           "templates_logic": "join",
+          "background": "#fffb38",
+          "type": "git",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
+            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
+            "{{ if gt .Behind 0 }}#B388FF{{ end }}"
+          ],
           "templates": [
             "\u2800 {{ .UpstreamIcon }}{{ .HEAD }}",
             "{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}",
@@ -85,208 +105,187 @@
             "{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}",
             "{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}",
             "{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} \u2800"
-          ],
-          "template": "",
-          "leading_diamond": "\ue0b2",
-          "trailing_diamond": "\ue0b0",
-          "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
-            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
-            "{{ if gt .Behind 0 }}#B388FF{{ end }}"
-          ],
-          "properties": {
-            "branch_icon": "\ue725 ",
-            "fetch_status": true,
-            "fetch_stash_count": true,
-            "fetch_upstream_icon": true,
-            "fetch_worktree_count": true
-          }
+          ]
         },
         {
-          "type": "text",
           "style": "powerline",
-          "background": "#424242",
           "template": "{{ if .Segments.Contains \"Development\" }}\u2800{{ end }}",
-          "powerline_symbol": "\ue0b0"
+          "powerline_symbol": "\ue0b0",
+          "background": "#424242",
+          "type": "text"
         },
         {
-          "alias": "Development",
-          "type": "python",
+          "properties": {
+            "fetch_version": false
+          },
           "style": "powerline",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }} \udb80\udf20 {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
           "foreground": "#E4F34A",
           "background": "#424242",
-          "template": "{{ if .Error }}{{ .Error }}{{ else }} \udb80\udf20 {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
-          "properties": {
-            "fetch_version": false
-          }
+          "type": "python",
+          "alias": "Development"
         },
         {
-          "alias": "Development",
-          "type": "node",
+          "properties": {
+            "fetch_version": true
+          },
           "style": "powerline",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }} \udb80\udf99 {{ .Full }}{{ end }}",
           "foreground": "#42E66C",
           "background": "#424242",
-          "template": "{{ if .Error }}{{ .Error }}{{ else }} \udb80\udf99 {{ .Full }}{{ end }}",
-          "properties": {
-            "fetch_version": true
-          }
+          "type": "node",
+          "alias": "Development"
         },
         {
-          "alias": "Development",
-          "type": "java",
-          "style": "powerline",
-          "foreground": "#E64747",
-          "background": "#424242",
-          "template": "{{ if .Error }}{{ .Error }}{{ else }} \udb82\udf37 {{ .Full }}{{ end }}",
           "properties": {
             "fetch_version": false
-          }
+          },
+          "style": "powerline",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }} \udb82\udf37 {{ .Full }}{{ end }}",
+          "foreground": "#E64747",
+          "background": "#424242",
+          "type": "java",
+          "alias": "Development"
         },
         {
-          "alias": "Development",
-          "type": "php",
-          "style": "powerline",
-          "foreground": "#9B6BDF",
-          "background": "#424242",
-          "template": "{{ if .Error }}{{ .Error }}{{ else }} \udb80\udf1f {{ .Full }}{{ end }}",
           "properties": {
             "fetch_version": true
-          }
-        },
-        {
-          "type": "text",
+          },
           "style": "powerline",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }} \udb80\udf1f {{ .Full }}{{ end }}",
+          "foreground": "#9B6BDF",
           "background": "#424242",
-          "template": "{{ if .Segments.Contains \"Development\" }}\u2800{{ end }}",
-          "powerline_symbol": "\ue0b0"
+          "type": "php",
+          "alias": "Development"
         },
         {
-          "type": "battery",
           "style": "powerline",
-          "foreground": "#F8F8F2",
-          "background": "#f36943",
+          "template": "{{ if .Segments.Contains \"Development\" }}\u2800{{ end }}",
           "powerline_symbol": "\ue0b0",
-          "template": "{{ if .Error }}{{ .Error }}{{ else }} {{ .Icon }}{{ .Percentage }}% {{ end }}",
-          "background_templates": [
-            "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
-            "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
-            "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
-          ],
+          "background": "#424242",
+          "type": "text"
+        },
+        {
           "properties": {
             "charged_icon": "\ue22f ",
             "charging_icon": "\udb80\udc84 ",
             "discharging_icon": "\udb80\udc83 "
-          }
+          },
+          "style": "powerline",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }} {{ .Icon }}{{ .Percentage }}% {{ end }}",
+          "foreground": "#F8F8F2",
+          "powerline_symbol": "\ue0b0",
+          "background": "#f36943",
+          "type": "battery",
+          "background_templates": [
+            "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+            "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
+            "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
+          ]
         },
         {
-          "type": "connection",
           "style": "diamond",
+          "trailing_diamond": "\ue0b0",
+          "template": "\u2800{{ if eq .Type \"wifi\" }}\udb81\udda9{{ else if eq .Type \"ethernet\"}}\udb80\ude00{{ else if eq .Type \"bluetooth\" }}\udb80\udcaf{{ else if eq .Type \"cellular\" }}\udb81\udca2{{ end }} \u2800",
           "foreground": "#F8F8F2",
           "background": "#08a1ec",
-          "template": "\u2800{{ if eq .Type \"wifi\" }}\udb81\udda9{{ else if eq .Type \"ethernet\"}}\udb80\ude00{{ else if eq .Type \"bluetooth\" }}\udb80\udcaf{{ else if eq .Type \"cellular\" }}\udb81\udca2{{ end }} \u2800",
-          "trailing_diamond": "\ue0b0",
+          "type": "connection",
           "background_templates": [
             "{{ if (lt .TransmitRate 300) }}#9ce1f0{{ else if (lt .TransmitRate 600) }}#5ac9f4{{ else if (lt .TransmitRate 900) }}#10c5ec{{ else }}#08a1ec{{ end }}"
           ]
         }
-      ],
-      "type": "prompt"
+      ]
     },
     {
+      "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "type": "kubectl",
           "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b0",
+          "template": " \udb84\udcfe Kubernetes {{.Context}} cluster{{if .Namespace}}- {{.Namespace}} namespace{{end}} ",
           "foreground": "#000000",
           "background": "#ebcc34",
-          "template": " \udb84\udcfe Kubernetes {{.Context}} cluster{{if .Namespace}}- {{.Namespace}} namespace{{end}} ",
-          "leading_diamond": "\ue0b6",
-          "trailing_diamond": "\ue0b0"
+          "type": "kubectl"
         },
         {
-          "type": "aws",
           "style": "powerline",
-          "foreground": "#F8F8F2",
-          "background": "#FFA400",
           "template": " \udb83\ude0f {{.Profile}}{{if .Region}}@{{.Region}}{{end}} ",
-          "powerline_symbol": "\uE0B0"
+          "foreground": "#F8F8F2",
+          "powerline_symbol": "\ue0b0",
+          "background": "#FFA400",
+          "type": "aws"
         },
         {
-          "type": "az",
           "style": "powerline",
-          "foreground": "#000000",
-          "background": "#9ec3f0",
           "template": " \uebd8 Subscription {{ .Name }} ({{ if .EnvironmentName | contains \"AzureCloud\" }}{{ \"Global\" }}{{ else }}{{ .EnvironmentName }}{{ end }}) ",
-          "powerline_symbol": "\ue0b0"
+          "foreground": "#000000",
+          "powerline_symbol": "\ue0b0",
+          "background": "#9ec3f0",
+          "type": "az"
         },
         {
-          "type": "cftarget",
           "style": "powerline",
-          "foreground": "#100e23",
-          "background": "#a7cae1",
           "template": " \ueac3 {{if .Org }}{{ .Org }}{{ end }}{{ if .Space }}/{{ .Space }}{{ end }} ",
-          "powerline_symbol": "\ue0b0"
+          "foreground": "#100e23",
+          "powerline_symbol": "\ue0b0",
+          "background": "#a7cae1",
+          "type": "cftarget"
         }
       ],
-      "type": "prompt"
+      "newline": true
     },
     {
+      "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "type": "text",
           "style": "plain",
-          "template": "\u256d\u2500"
+          "template": "\u256d\u2500",
+          "type": "text"
         },
         {
-          "type": "time",
-          "style": "plain",
-          "template": " \u2665 {{ .CurrentDate | date .Format }} |",
           "properties": {
             "time_format": "15:04"
-          }
+          },
+          "style": "plain",
+          "template": " ♥ {{ .CurrentDate | date .Format }} |",
+          "type": "time"
         },
         {
-          "type": "root",
           "style": "plain",
-          "template": " \uf292 "
+          "template": " \uf292 ",
+          "type": "root"
         },
         {
-          "type": "path",
-          "style": "plain",
-          "template": " {{ .Path }} ",
           "properties": {
+            "folder_icon": "\udb80\ude4b",
             "folder_separator_icon": " \ueab6 ",
             "home_icon": "\udb80\udedc",
-            "folder_icon": "\udb80\ude4b",
             "style": "agnoster"
-          }
+          },
+          "style": "plain",
+          "template": " {{ .Path }} ",
+          "type": "path"
         }
       ],
-      "type": "prompt"
+      "newline": true
     },
     {
+      "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "type": "exit",
-          "style": "plain",
-          "template": "\u2570\u2500",
           "properties": {
             "always_enabled": true
-          }
+          },
+          "style": "plain",
+          "template": "\u2570\u2500",
+          "type": "text"
         }
       ],
-      "type": "prompt"
+      "newline": true
     }
-  ],
-  "final_space": true,
-  "console_title_template": "{{if .Root}}\u26a1 {{end}}{{.HostName}} \u2794 {{ .Folder }}",
-  "pwd": "osc99",
-  "version": 2
+  ]
 }

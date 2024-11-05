@@ -24,17 +24,16 @@ function Get-LastTaskVersion {
         [string]$taskID
     )
 
-    $commits = git log --oneline | Select-String -Pattern "\[#${taskID}(?:[:-](\d+))?\]"
-
+    $commits = git log --oneline --format="%s" --grep="#$taskID" | Select-String -Pattern "\[#${taskID}(?:[:-](\d+))?\]"
 
     if ($commits) {
         $versions = $commits.Matches | ForEach-Object { if ($_.Groups[1].Success) { [int]$_.Groups[1].Value } else { 0 } } | Sort-Object -Descending
-
         return $versions[0] + 1
     } else {
         return 0
     }
 }
+
 function Create-Branch {
     param (
         [PSCustomObject]$task
@@ -64,15 +63,9 @@ function Create-Commit {
     Write-Output "Commit criado: ${commitMessage}"
 }
 
-if (-not $task) {
-    $task = git log --oneline --reverse -1 | Select-String -Pattern "\[#([a-zA-Z0-9]+)(?:[:-](\d+))?\] - (.+)" | Select-Object -Last 1
-}
-
-$taskDetails = Parse-task -info $task
+$taskDetails = if ($task) { Parse-task -info $task } else { Parse-task -info (git log --oneline --reverse -1) }
 $lastVersion = Get-LastTaskVersion -taskID $taskDetails.taskID
 $taskDetails.version = $lastVersion
 
 Create-Branch -task $taskDetails
 Create-Commit -task $taskDetails
-
-

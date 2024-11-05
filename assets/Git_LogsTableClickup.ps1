@@ -1,8 +1,7 @@
 param(
     [string]$branchA = "develop",
     [string]$branchB = "master",
-    $listarTasks = $false,
-    [int]$commitsToKeep = 4
+    $listarTasks = $false
 )
 
 function Get-ClickupTasks {
@@ -129,11 +128,7 @@ function Write-Table {
         }
     }
 
-
-
     Write-Host "`nTabela de tasks ($taskCount commits) ($($tasksPresented.Count) tasks)"
-
-    return $tesouraCommits
 }
 
 # Extraia os taskIDs, versões, mensagens e author dos commits da milestone-sandbox
