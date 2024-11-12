@@ -8,7 +8,7 @@ function Get-ClickupTasks {
     param (
         [string]$branch,
         # Filtrar os commits de task pelo padrão "[#taskID:version]"
-        [string]$taskPattern = "\[#([a-zA-Z0-9]+)(?:[:-](\d+))?\] - (.+)",
+        [string]$taskPattern = "\[#([a-zA-Z0-9]+)(?:[:-](\d+))?\] -?(.+)",
         # Ignorar os commits de configuração do ambiente no milestone-sandbox (ajuste se você deseja)
         [string]$ignorePattern = "produção|Sandbox"
     )

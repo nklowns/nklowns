@@ -5,10 +5,11 @@ param (
 
 function Parse-task {
     param (
-        [string]$info
+        [string]$info,
+        [string]$taskPattern = "\[#([a-zA-Z0-9]+)(?:[:-](\d+))?\] -?(.+)"
     )
 
-    if ($info -match "\[#([a-zA-Z0-9]+)(?:[:-](\d+))?\] - (.+)") {
+    if ($info -match $taskPattern) {
         return [PSCustomObject]@{
             taskID = $matches[1]
             version = if ($matches[2]) { [int]$matches[2] } else { 0 }
