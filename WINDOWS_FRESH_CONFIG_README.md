@@ -179,3 +179,8 @@ Utilizando o Fnm [fnm.vercel.app](https://github.com/Schniz/fnm)
 <code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">winget install</span><span> Schniz.fnm</span></code>
 </pre>
 
+## Configurando o Defender
+
+<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
+<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">Set-MpPreference</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-ScanAvgCPULoadFactor</span><span> 23</span></code>
+</pre>

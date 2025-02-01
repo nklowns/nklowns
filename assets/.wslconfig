@@ -1,9 +1,14 @@
-# Settings apply across all Linux distros running on WSL 2
+# Configurações aplicadas a todas as distribuições Linux no WSL 2
 [wsl2]
-kernelCommandLine = "sysctl.vm.max_map_count=262144"
+# Ajuste para lidar com alta carga de trabalho do Docker
+kernelCommandLine="sysctl.vm.max_map_count=524288 sysctl.fs.inotify.max_user_watches=1048576 sysctl.fs.inotify.max_user_instances=1024 sysctl.fs.inotify.max_queued_events=32768 sysctl.net.ipv4.tcp_tw_reuse=1"
 
-# Limits VM memory to use no more than 4 GB, this can be set as whole numbers using GB or MB
-memory=7GB
+memory=24GB
+processors=8
+swap=12GB
 
-# Sets the VM to use two virtual processors
-processors=10
+# Configuração de IP para evitar conflitos com o VMware
+localhostForwarding=true
+
+# Configurações de desempenho de disco
+# pageReporting=true
