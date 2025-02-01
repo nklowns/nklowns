@@ -1,20 +1,21 @@
 # Caminho base para a instalação do Eclipse Adoptium
 $eclipseInstallPath = "C:\Program Files\Eclipse Adoptium"
+$latestLTS = "21"
 
-# Verifica se o Eclipse Adoptium Temurin JDK 17 está instalado via winget
-$eclipseJdk = (winget list | Select-String 'EclipseAdoptium.Temurin.17.JDK').Matches.Value
+# Verifica se o Eclipse Adoptium Temurin JDK está instalado via winget
+$eclipseJdk = (winget list | Select-String -Pattern "EclipseAdoptium.Temurin.$latestLTS.JDK").Matches.Value
 
 # Verifica se o JDK já está instalado
 if ($eclipseJdk -eq $null) {
-    Write-Host "Eclipse Adoptium Temurin JDK 17 não encontrado."
+    Write-Host "Eclipse Adoptium Temurin JDK não encontrado."
     exit
 }
 
 # Determina a versão do JDK instalada
-$jdkPath = (Get-ChildItem $eclipseInstallPath | Where-Object { $_.Name -like "jdk-17.*-hotspot" } | Sort-Object -Property CreationTime -Descending | Select-Object -First 1).FullName
+$jdkPath = (Get-ChildItem $eclipseInstallPath | Where-Object { $_.Name -like "jdk-$latestLTS.*-hotspot" } | Sort-Object -Property CreationTime -Descending | Select-Object -First 1).FullName
 
 if ($jdkPath -eq $null) {
-    Write-Host "Nenhuma versão do JDK 17 encontrada em '$eclipseInstallPath'."
+    Write-Host "Nenhuma versão do JDK encontrada em '$eclipseInstallPath'."
     exit
 }
 
