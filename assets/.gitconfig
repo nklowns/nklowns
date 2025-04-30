@@ -65,6 +65,7 @@
 	lost-commit = fsck --lost-found --unreachable
 
 	# forced pull: You have a local branch (e.g. for reviewing), but someone else did a forced push update on the remote branch. A regular git pull will fail, but this will just set the local branch to match the remote branch. BEWARE: this will overwrite any local commits you have made on this branch that haven't been pushed.
+	pushu = !sh -c \"git pushfn -u origin $(git rev-parse --abbrev-ref HEAD)\"
 	pullf = !sh -c \"git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)\"
 	rebaseo = !sh -c \"git fetch && git rebase -i origin/develop\"
 	pull-develop = !sh -c \"git fetch origin develop:develop\"
