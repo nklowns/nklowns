@@ -11,176 +11,140 @@ Skip-to:
 
 ## Gerenciamento de Terminal
 
-Instalar o [Terminal do Windows](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=pt-br&gl=br)
-<br>provavelmente já vem instalado por padrão.
+Instalar o [Terminal do Windows](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=pt-br&gl=br), provavelmente já vem instalado por padrão.
 
-Instalar o [Powershell 7](https://learn.microsoft.com/pt-br/powershell/scripting/install/installing-powershell-on-windows)
+Instalar o [Powershell 7](https://learn.microsoft.com/pt-br/powershell/scripting/install/installing-powershell-on-windows):
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">winget install</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">--id</span><span> </span><span>Microsoft.Powershell</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">--source</span><span> </span><span>winget</span></code>
-</pre>
-<br>
+```ps1
+winget install --id Microsoft.Powershell --source winget
+```
 
 ## Gerenciador de Pacotes
 
-Instalar o gerenciador que não é o chocolatey
+Instalar o melhor gerenciador (~~que não é o chocolatey~~)
 
-[Scoop.sh](https://scoop.sh/)
+[Scoop.sh](https://scoop.sh/):
+```ps1
+# Optional: Needed to run a remote script the first time
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">Set-ExecutionPolicy</span><span> RemoteSigned </span><span class="token" style="color: rgb(0, 224, 224);">-</span><span>Scope CurrentUser </span><span class="token" style="color: rgb(212, 208, 171);"># Optional: Needed to run a remote script the first time</span><span>
-</span><span class="token" style="color: rgb(255, 215, 0);">irm</span><span> get</span><span class="token" style="color: rgb(254, 254, 254);">.</span><span>scoop</span><span class="token" style="color: rgb(254, 254, 254);">.</span><span>sh </span><span class="token" style="color: rgb(0, 224, 224);">-</span><span>outfile </span><span class="token" style="color: rgb(0, 224, 224);">'install.ps1'</span>
-<span class="token" style="color: rgb(255, 215, 0);">.\install.ps1</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-</span><span>ScoopDir </span><span class="token" style="color: rgb(0, 224, 224);">'C:\Scoop'</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-</span><span>ScoopGlobalDir </span><span class="token" style="color: rgb(0, 224, 224);">'C:\GlobalScoopApps'</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-</span><span>NoProxy</span></code>
-</pre>
-<br>
+irm get.scoop.sh -outfile 'install.ps1'
+
+.\install.ps1 -ScoopDir 'C:\Scoop' -ScoopGlobalDir 'C:\GlobalScoopApps' -NoProxy
+```
 
 ### Lista de aplicativos para fresh start do scoop
 
 #### Pacotes Local
 
-> git
-> sudo
-> curl
-
-> ngrok
-> openssl
-
-> ffmpeg
-> imagemagick
-> yt-dlp
-
-> adb
-> scrcpy
-
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">scoop install</span><span> git</span><span> sudo</span><span> curl</span><span> ngrok</span><span> openssl</span><span> ffmpeg</span><span> imagemagick</span><span> yt-dlp</span><span> adb</span><span> scrcpy</span></code>
-</pre>
-<br>
+```sh
+scoop install git sudo curl ngrok openssl ffmpeg imagemagick yt-dlp adb scrcpy
+```
 
 #### Buckets para scoop
 
 > nerd-fonts
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">scoop bucket</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">add</span><span> nerd-fonts</span></code>
-</pre>
-<br>
+```sh
+scoop bucket add nerd-fonts
+```
 
 #### Pacotes Global
 
 > FiraCode-NF
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">sudo scoop install</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-g</span><span> FiraCode-NF</span></code>
-</pre>
-<br>
+```sh
+sudo scoop install -g FiraCode-NF
+```
 
 ## Configurando o terminal
 
-Instalar o [OhMyPosh.dev](https://ohmyposh.dev/)
+#### Instalar o [OhMyPosh.dev](https://ohmyposh.dev/)
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">winget install</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">--id</span><span> </span><span>JanDeDobbeleer.OhMyPosh</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">--source</span><span> </span><span>winget</span></code>
-</pre>
-<br>
+```ps1
+winget install --id JanDeDobbeleer.OhMyPosh --source winget
+```
 
-Instalar o Terminal-Icons
+#### Instalar o Terminal-Icons
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">Install-Module</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-Name</span><span> Terminal-Icons</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-Repository</span><span> PSGallery</span></code>
-</pre>
-<br>
+```ps1
+Install-Module -Name Terminal-Icons -Repository PSGallery
+```
 
-Iniciar o $PROFILE do terminal atual<br>
-Cuidado com o <span class="token" style="color: rgb(0, 224, 224);">-Force</span>
+#### Iniciar o $PROFILE do terminal atual
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">New-Item</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-Path</span><span> $PROFILE</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-Type</span><span> File</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-Force</span></code>
-</pre>
-<br>
+```ps1
+New-Item -Path $PROFILE -Type File -Force
+```
 
-### $PROFILE
-
-Baixar o [arquivo de layout para ohmyposh](assets/nks.omp.json)
-<br>
-Extrair no diretorio ao lado do $PROFILE no caso do Windows
+Baixar o [arquivo de layout para ohmyposh](assets/nks.omp.json), para extrair no diretorio ao lado do $PROFILE
 `~/Documents/PowerShell/nks.omp.json`
 
-Editar a [configuração do powershell](assets/Microsoft.PowerShell_profile.ps1) para o seguinte conteudo
-<br>
+```ps1
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/nklowns/nklowns/main/assets/nks.omp.json" -OutFile "$env:USERPROFILE\Documents\PowerShell\nks.omp.json"
+```
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code><span>oh-my-posh init pwsh --config="~/Documents/PowerShell/nks.omp.json" | Invoke-Expression</span>
+Baixar o [arquivo de configuração do powershell](assets/Microsoft.PowerShell_profile.ps1), para substituir o conteudo do $PROFILE
+`~/Documents/PowerShell/profile.ps1` ou `~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1`
 
-<span>Import-Module -Name Terminal-Icons</span></code>
-</pre>
-<br>
+```ps1
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/nklowns/nklowns/main/assets/Microsoft.PowerShell_profile.ps1" -OutFile "$env:USERPROFILE\Documents\PowerShell\profile.ps1"
+```
 
 ## Configurando o git
 
-Baixar o [arquivo de config para git](assets/.gitconfig)
+#### Configuração para ssh-agent
 
-Esse arquivo ira substituir o escopo global de configurações
-``` 
-SCOPES global
-$XDG_CONFIG_HOME/git/config
-
-~/.gitconfig
+```ps1
+Set-Service ssh-agent -StartupType Automatic
 ```
 
-Abrimos o arquivo para visualização e edição rapida seguindo
+#### .gitconfig
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code><span>git config --global core.editor notepad</span>
-<span>git config --global -e</span></code>
-</pre>
-<br>
+Baixar o exemplo do [arquivo de configuração do git](assets/.gitconfig), esse arquivo ira substituir o escopo global de configurações: `~/.gitconfig`
 
-### configuração para ssh
+```ps1
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/nklowns/nklowns/main/assets/.gitconfig" -OutFile "$env:USERPROFILE\.gitconfig"
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code><span>Set-Service ssh-agent -StartupType Automatic</span></code>
-</pre>
-<br>
-
-### configuração especifica para um Ambiente/Worktree de git
-
-Baixar o [arquivo de config para worktree](assets/.gitconfig_include)
-
-Esse arquivo ira substituir o escopo da pasta relativa que foi utilizada nas configurações do git
+git config --global -e
 ```
+
+#### Configuração especifica para um Ambiente/Worktree de git
+
+Baixar o [arquivo de config para worktree](assets/.gitconfig_include), esse arquivo `.gitconfig_include` ira substituir o escopo da pasta relativa que foi definido nas configurações do git:
+
+```md
 [includeIf "gitdir:**/<WORKTREE>/"]
   path = C:/<WORKTREE>/.gitconfig_include
 ```
+
 Subistituir a identificação de pasta relativa &lt;WORKTREE&gt;
 
-Alocar o arquivo no diretorio &lt;WORKTREE&gt; utilizado, e atualizar o path para o caminho absoluto do mesmo.
+Alocar o arquivo `.gitconfig_include` no diretorio &lt;WORKTREE&gt; utilizado, e atualizar o path para o caminho absoluto do mesmo.
 
 ## Configurando as JDKs
 
-Utilizando os binarios da [Adoptium.net](https://adoptium.net/installation/)
+Utilizando os binarios da [Adoptium.net](https://adoptium.net/installation/).
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">winget install</span><span> EclipseAdoptium.Temurin.8.JDK</span>
-<span class="token" style="color: rgb(255, 215, 0);">winget install</span><span> EclipseAdoptium.Temurin.11.JDK</span>
-<span class="token" style="color: rgb(255, 215, 0);">winget install</span><span> EclipseAdoptium.Temurin.17.JDK</span></code>
-</pre>
-<br>
+```ps1
+winget install EclipseAdoptium.Temurin.8.JDK
+winget install EclipseAdoptium.Temurin.11.JDK
+winget install EclipseAdoptium.Temurin.17.JDK
+```
 
 
-Executar o [arquivo de syslink para Temurin](assets/EclipseAdoptium.Temurin.JDK.ps1)
+Executar o [arquivo de syslink para Temurin](assets/EclipseAdoptium.Temurin.JDK.ps1).
 
 ## Configurando o Node
 
-Utilizando o Fnm [fnm.vercel.app](https://github.com/Schniz/fnm)
+Utilizando o Fnm [fnm.vercel.app](https://github.com/Schniz/fnm).
 
-
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">winget install</span><span> Schniz.fnm</span></code>
-</pre>
+```ps1
+winget install Schniz.fnm
+```
 
 ## Configurando o Defender
 
-<pre style="color: rgb(248, 248, 242); background: rgb(43, 43, 43); font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; tab-size: 4; hyphens: none; padding: 1em; margin: 0px; overflow: auto; border-radius: 0.3em; font-size: 0.9em;">
-<code style="line-height: 1.4; font-size: 0.9em; margin: 0px; white-space: pre;"><span class="token" style="color: rgb(255, 215, 0);">Set-MpPreference</span><span> </span><span class="token" style="color: rgb(0, 224, 224);">-ScanAvgCPULoadFactor</span><span> 23</span></code>
-</pre>
+```ps1
+Set-MpPreference -ScanAvgCPULoadFactor 23
+```
