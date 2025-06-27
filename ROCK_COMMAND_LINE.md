@@ -12,7 +12,7 @@ Get-ChildItem *.mkv -Recurse | ForEach-Object { ffmpeg -i "$($_.FullName)"-y -c:
 Usage of [x264](https://www.lambdatest.com/web-technologies/mpeg4) refers to better compability compared to [x265](https://www.lambdatest.com/web-technologies/hevc)
 
 Input file is the fullname with path
-```ps1 
+```ps1
 ffmpeg -i "$($_.FullName)"
 ```
 The `-y` used to force the overwrite of existing files. you can remove the option -y if you want to be asked if to overwrite a file with the same name.
@@ -46,4 +46,8 @@ Replace the code above with this to keep the file extension.
 
 </details>
 
+### netsh foward port
 
+```ps1
+netsh interface portproxy add v4tov4 listenport=<FowardTo> listenaddress=0.0.0.0 connectaddress=127.0.0.1 connectport=<FowardFrom>
+```

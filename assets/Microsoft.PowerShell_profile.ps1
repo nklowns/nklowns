@@ -33,9 +33,9 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+s" -Function HistorySearchBackward
 #endregion
 
 #region aliases initialize
-Set-Alias -Name RemoveHistory -Value "D:\nklowns\nklowns\assets\Pwsh_RemoveLastHistory.ps1"
-Set-Alias -Name Git_WorkflowClickup -Value "D:\nklowns\nklowns\assets\Git_WorkflowClickup.ps1"
-Set-Alias -Name Git_LogsTableClickup -Value "D:\nklowns\nklowns\assets\Git_LogsTableClickup.ps1"
+Set-Alias -Name RemoveHistory -Value "D:\nklowns\nklowns\assets\scripts\ps1\Pwsh_RemoveLastHistory.ps1"
+Set-Alias -Name Git_WorkflowClickup -Value "D:\nklowns\nklowns\assets\scripts\ps1\Git_WorkflowClickup.ps1"
+Set-Alias -Name Git_LogsTableClickup -Value "D:\nklowns\nklowns\assets\scripts\ps1\Git_LogsTableClickup.ps1"
 #endregion
 
 echo "PowerShell.Profile"

@@ -38,7 +38,7 @@ irm get.scoop.sh -outfile 'install.ps1'
 #### Pacotes Local
 
 ```sh
-scoop install git sudo curl ngrok openssl ffmpeg imagemagick yt-dlp adb scrcpy
+scoop install nssm git curl ngrok openssl ffmpeg imagemagick yt-dlp adb scrcpy
 ```
 
 #### Buckets para scoop
