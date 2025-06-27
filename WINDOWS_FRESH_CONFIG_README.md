@@ -148,3 +148,69 @@ winget install Schniz.fnm
 ```ps1
 Set-MpPreference -ScanAvgCPULoadFactor 23
 ```
+
+
+## Configurando o Dev Drive
+
+[Armazenar o cache de pacote no Dev Drive](https://learn.microsoft.com/pt-br/windows/dev-drive/#storing-package-cache-on-dev-drive)
+
+```ps1
+# Node.js (npm)
+setx /M NPM_CONFIG_CACHE "D:\packages\npm"
+
+# Yarn
+setx /M YARN_CACHE_FOLDER "D:\packages\yarn"
+
+# PNPM
+setx /M PNPM_HOME "D:\packages\pnpm"
+setx /M PNPM_STORE_PATH "D:\packages\pnpm\store"
+
+# Pip (Python)
+setx /M PIP_CACHE_DIR "D:\packages\pip"
+
+# Poetry (Python)
+setx /M POETRY_CACHE_DIR "D:\packages\poetry"
+setx /M POETRY_VIRTUALENVS_PATH "D:\packages\poetry\venvs"
+
+# NuGet (.NET)
+setx /M NUGET_PACKAGES "D:\packages\nuget"  # ou D:\<username>\.nuget\packages
+
+# .NET SDK - global tools
+setx /M DOTNET_CLI_HOME "D:\packages\dotnet"
+
+# Maven
+setx /M MAVEN_OPTS "-Dmaven.repo.local=D:\packages\maven"
+
+# Gradle
+setx /M GRADLE_USER_HOME "D:\packages\gradle"
+
+# Cargo (Rust)
+setx /M CARGO_HOME "D:\packages\cargo"
+setx /M RUSTUP_HOME "D:\packages\rustup"
+
+# Go
+setx /M GOCACHE "D:\packages\go\cache"
+setx /M GOPATH "D:\packages\go"
+
+# Vcpkg
+setx /M VCPKG_DEFAULT_BINARY_CACHE "D:\packages\vcpkg"
+
+# Conan (C++)
+setx /M CONAN_USER_HOME "D:\packages\conan"
+
+# Java (toolchains, se usado com SDKMAN ou similar)
+setx /M JAVA_TOOL_OPTIONS "-Duser.home=D:\packages\java"
+
+# Flutter
+setx /M PUB_CACHE "D:\packages\flutter"
+
+# Deno
+setx /M DENO_DIR "D:\packages\deno"
+
+# Bun (JS Runtime)
+setx /M BUN_INSTALL "D:\packages\bun"
+
+# Android SDK/NDK
+setx /M ANDROID_SDK_ROOT "D:\packages\android\sdk"
+setx /M ANDROID_NDK_HOME "D:\packages\android\ndk"
+```
