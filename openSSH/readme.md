@@ -1,11 +1,14 @@
-Instalar
+# Instalar
+
 ```pwsh
 Add-WindowsCapability -Online -Name OpenSSH.Server
-Set-Service -Name sshd -StartupType 'Automatic'
+
+Set-Service ssh-agent -StartupType Automatic
+Set-Service sshd -StartupType Automatic
 # C:\ProgramData\ssh\logs\sshd.log
 ```
 
-Testar
+# Testar
 ```pwsh
 Get-Service sshd
 Test-NetConnection -ComputerName localhost -Port 22
@@ -17,7 +20,7 @@ Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' | Select-Obje
 ```
 
 
-Definition
+## Definition
 ```pwsh
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value $(Get-Command pwsh.exe).Source -PropertyType String -Force
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShellCommandOption -Value "" -PropertyType String -Force
@@ -28,7 +31,7 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name "DefaultShell" -Value (Joi
 ```
 
 
-Override
+## Override
 ```pwsh
 Copy-Item -Path "C:\ProgramData\ssh\sshd_config" -Destination "C:\ProgramData\ssh\sshd_config.bak"
 Copy-Item -Path "D:\nklowns\nklowns\openSSH\sshd_config" -Destination "C:\ProgramData\ssh\sshd_config" -Force
@@ -41,7 +44,7 @@ Restart-Service sshd
 ```
 
 
-Syslink
+## Syslink
 ```pwsh
 Rename-Item -Path "C:\ProgramData\ssh\sshd_config" -NewName "sshd_config.bak"
 New-Item -ItemType SymbolicLink -Path "C:\ProgramData\ssh\sshd_config" -Target "D:\nklowns\nklowns\openSSH\sshd_config"

@@ -95,9 +95,7 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/nklowns/nklowns/main/a
 
 #### Configuração para ssh-agent
 
-```ps1
-Set-Service ssh-agent -StartupType Automatic
-```
+[vide](openSSH/README.md)
 
 #### .gitconfig
 
@@ -146,6 +144,8 @@ winget install Schniz.fnm
 ## Configurando o Defender
 
 ```ps1
+(Get-ChildItem HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | ForEach-Object { Get-ItemProperty $_.PSPath}).BasePath
+$(Get-MpPreference).ExclusionPath
 Set-MpPreference -ScanAvgCPULoadFactor 23
 ```
 
@@ -155,6 +155,11 @@ Set-MpPreference -ScanAvgCPULoadFactor 23
 [Armazenar o cache de pacote no Dev Drive](https://learn.microsoft.com/pt-br/windows/dev-drive/#storing-package-cache-on-dev-drive)
 
 ```ps1
+fsutil devdrv query D:
+fsutil devdrv enable /disallowAv
+
+takeown.exe /f . /r
+
 # Node.js (npm)
 setx /M NPM_CONFIG_CACHE "D:\packages\npm"
 
