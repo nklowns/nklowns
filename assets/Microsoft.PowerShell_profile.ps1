@@ -40,4 +40,8 @@ Set-Alias -Name Git_LogsTableClickup -Value "D:\nklowns\nklowns\assets\scripts\p
 
 echo "PowerShell.Profile"
 
-if ($env:TERM_PROGRAM -eq "vscode") { . "$(code --locate-shell-integration-path pwsh)" }
+#region VSCode Shell Integration
+if ($env:TERM_PROGRAM -eq "vscode") {
+    . "$(code --locate-shell-integration-path pwsh)"
+}
+#endregion

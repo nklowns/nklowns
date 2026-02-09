@@ -1,7 +1,7 @@
 # Configurações aplicadas a todas as distribuições Linux no WSL 2
 [wsl2]
 # Ajuste para lidar com alta carga de trabalho do Docker
-kernelCommandLine="sysctl.fs.aio-max-nr=524288 sysctl.fs.inotify.max_queued_events=1048576 sysctl.fs.inotify.max_user_instances=1048576 sysctl.fs.inotify.max_user_watches=1048576 sysctl.fs.file-max=131072 sysctl.vm.max_map_count=524288 sysctl.net.ipv4.tcp_tw_reuse=1"
+kernelCommandLine="sysctl.fs.aio-max-nr=524288 sysctl.fs.inotify.max_queued_events=1048576 sysctl.fs.inotify.max_user_instances=1048576 sysctl.fs.inotify.max_user_watches=1048576 sysctl.fs.file-max=131072 sysctl.vm.max_map_count=524288 sysctl.net.ipv4.tcp_tw_reuse=1 sysctl.net.ipv4.ip_local_port_range='32768 60999'"
 
 memory=36GB
 processors=10
@@ -9,6 +9,12 @@ swap=24GB
 
 # Configuração de IP para evitar conflitos com o VMware
 localhostForwarding=true
+
+# Configurações de rede para melhorar a compatibilidade com o Docker Desktop
+networkingMode=mirrored
+dnsTunneling=true
+firewall=true
+autoProxy=true
 
 # Configurações de desempenho de disco
 # pageReporting=true

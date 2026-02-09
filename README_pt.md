@@ -27,11 +27,11 @@
 
 ```javascript
 import JavaScript, CSharp from 'business'
-import PHP from 'hobbies'
+import PHP, Python from 'hobbies'
 
 let cloud = {
   pronouns: "Ele" || "Dele",
-  code: [JavaScript, PHP, CSharp],
+  code: [JavaScript, PHP, Python, CSharp],
   basicInformationLevel: ["pt_BR", "en_US"],
   currentFocus: "Criar uma imagem de auto-branding.",
   askMeAbout: ["tech", "WebScraper ou Spider?"]

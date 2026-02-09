@@ -1,6 +1,6 @@
 # Caminho base para a instalação do Eclipse Adoptium
 $eclipseInstallPath = "C:\Program Files\Eclipse Adoptium"
-$latestLTS = "21"
+$latestLTS = "25"
 
 # Verifica se o Eclipse Adoptium Temurin JDK está instalado via winget
 $eclipseJdk = (winget list | Select-String -Pattern "EclipseAdoptium.Temurin.$latestLTS.JDK").Matches.Value
