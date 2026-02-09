@@ -10,3 +10,4 @@ net.ipv4.ip_local_port_range=32768 60999
 "@ && wsl -d docker-desktop sh -c "echo '$sysctl' >> /etc/sysctl.conf && sysctl -p"
 
 wsl -d docker-desktop sh -c "sysctl fs.inotify.max_user_instances"
+wsl -d docker-desktop sh -c 'cat /etc/sysctl.conf'
