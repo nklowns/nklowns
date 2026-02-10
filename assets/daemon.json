@@ -1,0 +1,17 @@
+{
+  "builder": {
+    "gc": {
+      "defaultKeepStorage": "20GB",
+      "enabled": true
+    }
+  },
+  "experimental": false,
+  "hosts": null,
+  "mtu": 1280,
+  "runtimes": {
+    "nvidia": {
+      "args": null,
+      "path": "nvidia-container-runtime"
+    }
+  }
+}
